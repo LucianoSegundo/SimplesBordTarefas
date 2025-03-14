@@ -8,7 +8,7 @@ CREATE TABLE board_columns (
     tipo CHAR(10) NOT NULL,
     ordem INT NOT NULL,
     board_id BIGINT NOT NULL,
-    CONSTRAINT bords__board_columns_fk FOREIGN KEY (board_id) REFERENCES board(id) ON DELETE CASCADE,
+    CONSTRAINT bords__board_columns_fk FOREIGN KEY (board_id) REFERENCES boards(id) ON DELETE CASCADE,
     CONSTRAINT id_ordem_uk UNIQUE KEY unique_board_id_ordem (board_id, ordem)
 )ENGINE=InnoDB;
 

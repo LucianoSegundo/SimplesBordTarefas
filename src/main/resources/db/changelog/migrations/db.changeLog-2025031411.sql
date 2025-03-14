@@ -2,7 +2,7 @@
 --changeset luciano:2025031411
 --comment: board table create
 
-CREATE TABLE board(
+CREATE TABLE boards(
 id BIGINT AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(255) NOT NULL
 ) ENGINE=InnoDB;
