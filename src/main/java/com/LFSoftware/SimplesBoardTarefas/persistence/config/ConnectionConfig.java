@@ -13,6 +13,7 @@ public final class ConnectionConfig {
 	private static  String senha =  System.getenv("BD_SENHA");;
 	private static Connection conn = null;
 
+	public ConnectionConfig() {}
 	public static Connection getCurrentConnection() throws Exception {
 		if (conn == null)
 			try {
