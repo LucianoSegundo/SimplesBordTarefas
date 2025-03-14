@@ -6,31 +6,31 @@
 
 classDiagram
     class Board {
-        long id
-        String nome
+        -long id
+        -String nome
     }
 
     class BoardColumn {
-        long id
-        String nome
-        String tipo
-        int ordem
+        -long id
+        -String nome
+        -String tipo
+        -int ordem
     }
 
     class Card {
-        long id
-        String titulo
-        String descricao
-        OffsetDateTime dataCriacao
+        -long id
+        -String titulo
+        -String descricao
+        -OffsetDateTime dataCriacao
     }
 
     class Bloqueio {
-        long id
-        boolean bloqueado
-        OffsetDateTime dataBloqueio
-        String motivoBloqueio
-        OffsetDateTime dataDesbloqueio
-        String motivoDesbloqueio
+        -long id
+        -boolean bloqueado
+        -OffsetDateTime dataBloqueio
+        -String motivoBloqueio
+        -OffsetDateTime dataDesbloqueio
+        -String motivoDesbloqueio
     }
 
     Board "1" --> "*" BoardColumn : tem
