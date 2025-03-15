@@ -7,8 +7,8 @@ CREATE TABLE cardes (
     titulo VARCHAR(255) NOT NULL,
     descricao TEXT NOT NULL,
     dataCriacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    board_columns_id BIGINT NOT NULL,
-    CONSTRAINT board_columns__cardes_fk FOREIGN KEY (board_columns_id) REFERENCES board_columns(id) ON DELETE CASCADE
+    board_column_id BIGINT NOT NULL,
+    CONSTRAINT board_columns__cardes_fk FOREIGN KEY (board_column_id) REFERENCES board_columns(id) ON DELETE CASCADE
 )ENGINE=InnoDB;
 
 --rollback DROP TABLE cardes

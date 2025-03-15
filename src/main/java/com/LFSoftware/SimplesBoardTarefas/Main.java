@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.LFSoftware.SimplesBoardTarefas.persistence.config.ConnectionConfig;
 import com.LFSoftware.SimplesBoardTarefas.persistence.migration.EstrategiaMigracao;
+import com.LFSoftware.SimplesBoardTarefas.ui.MainMenu;
 
 @Component
 public class Main implements CommandLineRunner {
@@ -18,6 +19,8 @@ public class Main implements CommandLineRunner {
 		try (Connection conexao = ConnectionConfig.getCurrentConnection()) {
 			new EstrategiaMigracao(conexao).executeMigration();
 		}
+
+		new MainMenu().execute();
 
 	}
 

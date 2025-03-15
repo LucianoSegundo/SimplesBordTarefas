@@ -3,84 +3,84 @@ package com.LFSoftware.SimplesBoardTarefas.persistence.entity;
 import java.time.OffsetDateTime;
 
 public class Bloqueio {
-    private Long id;
-    private boolean bloqueado;
-    private OffsetDateTime dataBloqueio;
-    private String motivoBloqueio;
-    private OffsetDateTime dataDesbloqueio;
-    private String motivoDesbloqueio;
+	private Long id;
+	private boolean bloqueado;
+	private OffsetDateTime dataBloqueio;
+	private String motivoBloqueio;
+	private OffsetDateTime dataDesbloqueio;
+	private String motivoDesbloqueio;
 
-    public Bloqueio(String motivoBloqueio) {
-        this.bloqueado = true;
-        this.dataBloqueio = OffsetDateTime.now();
-        this.motivoBloqueio = motivoBloqueio;
-    }
+	public Bloqueio(String motivoBloqueio) {
+		this.bloqueado = true;
+		this.dataBloqueio = OffsetDateTime.now();
+		this.motivoBloqueio = motivoBloqueio;
+	}
 
-    public Bloqueio(Long id, boolean bloqueado, OffsetDateTime dataBloqueio, String motivoBloqueio, 
-                    OffsetDateTime dataDesbloqueio, String motivoDesbloqueio) {
-        this.id = id;
-        this.bloqueado = bloqueado;
-        this.dataBloqueio = dataBloqueio;
-        this.motivoBloqueio = motivoBloqueio;
-        this.dataDesbloqueio = dataDesbloqueio;
-        this.motivoDesbloqueio = motivoDesbloqueio;
-    }
-    
-    public boolean  Desbloquear(String motivo) {
-    	if(motivo == null || motivo.isBlank()) return false;
-    	this.bloqueado = false;
-    	this.motivoDesbloqueio = motivo;
-        this.dataDesbloqueio = OffsetDateTime.now();
+	public Bloqueio(Long id, boolean bloqueado, OffsetDateTime dataBloqueio, String motivoBloqueio,
+			OffsetDateTime dataDesbloqueio, String motivoDesbloqueio) {
+		this.id = id;
+		this.bloqueado = bloqueado;
+		this.dataBloqueio = dataBloqueio;
+		this.motivoBloqueio = motivoBloqueio;
+		this.dataDesbloqueio = dataDesbloqueio;
+		this.motivoDesbloqueio = motivoDesbloqueio;
+	}
 
-    	
-    	return true;
-    }
+	public boolean Desbloquear(String motivo) {
+		if (motivo == null || motivo.isBlank())
+			return false;
+		this.bloqueado = false;
+		this.motivoDesbloqueio = motivo;
+		this.dataDesbloqueio = OffsetDateTime.now();
 
-    public Long getId() {
-        return id;
-    }
+		return true;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public boolean isBloqueado() {
-        return bloqueado;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public void setBloqueado(boolean bloqueado) {
-        this.bloqueado = bloqueado;
-    }
+	public boolean isBloqueado() {
+		return bloqueado;
+	}
 
-    public OffsetDateTime getDataBloqueio() {
-        return dataBloqueio;
-    }
+	public void setBloqueado(boolean bloqueado) {
+		this.bloqueado = bloqueado;
+	}
 
-    public void setDataBloqueio(OffsetDateTime dataBloqueio) {
-        this.dataBloqueio = dataBloqueio;
-    }
+	public OffsetDateTime getDataBloqueio() {
+		return dataBloqueio;
+	}
 
-    public String getMotivoBloqueio() {
-        return motivoBloqueio;
-    }
+	public void setDataBloqueio(OffsetDateTime dataBloqueio) {
+		this.dataBloqueio = dataBloqueio;
+	}
 
-    public void setMotivoBloqueio(String motivoBloqueio) {
-        this.motivoBloqueio = motivoBloqueio;
-    }
+	public String getMotivoBloqueio() {
+		return motivoBloqueio;
+	}
 
-    public OffsetDateTime getDataDesbloqueio() {
-        return dataDesbloqueio;
-    }
+	public void setMotivoBloqueio(String motivoBloqueio) {
+		this.motivoBloqueio = motivoBloqueio;
+	}
 
-    public void setDataDesbloqueio(OffsetDateTime dataDesbloqueio) {
-        this.dataDesbloqueio = dataDesbloqueio;
-    }
+	public OffsetDateTime getDataDesbloqueio() {
+		return dataDesbloqueio;
+	}
 
-    public String getMotivoDesbloqueio() {
-        return motivoDesbloqueio;
-    }
+	public void setDataDesbloqueio(OffsetDateTime dataDesbloqueio) {
+		this.dataDesbloqueio = dataDesbloqueio;
+	}
 
-    public void setMotivoDesbloqueio(String motivoDesbloqueio) {
-        this.motivoDesbloqueio = motivoDesbloqueio;
-    }
+	public String getMotivoDesbloqueio() {
+		return motivoDesbloqueio;
+	}
+
+	public void setMotivoDesbloqueio(String motivoDesbloqueio) {
+		this.motivoDesbloqueio = motivoDesbloqueio;
+	}
 }

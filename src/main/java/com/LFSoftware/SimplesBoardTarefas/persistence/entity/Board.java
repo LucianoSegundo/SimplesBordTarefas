@@ -2,46 +2,56 @@ package com.LFSoftware.SimplesBoardTarefas.persistence.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Board {
- private Long id;
- private String nome;
- 
- private List<BoardColumn> colunas;
+	private Long id;
+	private String nome;
+	private List<BoardColumns> colunas;
 
- public Board() {
-	 this.colunas = new ArrayList<BoardColumn>();
+	public Board() {
+		this.setColunas(new ArrayList<BoardColumns>());
+	}
 
- }
+	public Board(Long id, String nome) {
+		this.id = id;
+		this.nome = nome;
+	}
 
- public Board(Long id, String nome, List<BoardColumn> colunas) {
-     this.id = id;
-     this.nome = nome;
-     this.colunas = colunas;
- }
+	public BoardColumns getColunaInicial() {
+		return filtarColunas(coluna -> coluna.getTipo().equals(TipoBoardEnum.Inicio));
+	}
 
- public Long getId() {
-     return id;
- }
+	public BoardColumns getColunaCanceladas() {
+		return filtarColunas(coluna -> coluna.getTipo().equals(TipoBoardEnum.Cancelado));
+	}
 
- public void setId(long id) {
-     this.id = id;
- }
+	private BoardColumns filtarColunas(Predicate<BoardColumns> filter) {
+		return colunas.stream().filter(filter).findFirst().orElseThrow();
+	}
 
- public String getNome() {
-     return nome;
- }
+	public Long getId() {
+		return id;
+	}
 
- public void setNome(String nome) {
-     this.nome = nome;
- }
+	public void setId(long id) {
+		this.id = id;
+	}
 
-public List<BoardColumn> getColunas() {
-	return colunas;
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public List<BoardColumns> getColunas() {
+		return colunas;
+	}
+
+	public void setColunas(List<BoardColumns> colunas) {
+		this.colunas = colunas;
+	}
+
 }
-
-public void setColunas(List<BoardColumn> colunas) {
-	this.colunas = colunas;
-}
-}
-
